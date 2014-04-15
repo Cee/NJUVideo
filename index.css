@@ -206,3 +206,34 @@ h3 {
     text-decoration:none;
     color: #0f4d92;
 }
+
+.active.li > a, .active.li > a:hover{
+    color: #fff;
+    background:url(images/nav_highlight.png) repeat-x;
+}
+
+.header h4, .header h3{
+    display:inline-block;
+}
+
+#breadcrumb {
+    padding-left: 0;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+}
+
+.no-margin-top {
+    margin-top: 0px;
+}
+
+#breadcrumb a{
+    font-size: 20px;
+    color: #630460;
+}
+
+#breadcrumb  li:nth-child(2)  a{
+    font-size:18px;
+    color: #974694;
+}

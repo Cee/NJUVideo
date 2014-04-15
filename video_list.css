@@ -1,49 +1,9 @@
 #sort {
-/*    background: #fefefe;*/
     padding:0% 30px;
-/*    margin:2%;*/
-/*    padding:1% 0px;*/
-/*
-    border-radius: 10px;
-    -moz-box-shadow:0px 2px 15px #666;
-    -webkit-box-shadow:0px 2px 15px #666;
-    box-shadow:0px 2px 15px #666;
-*/
 }
 
 .row+.underline{
     margin:5px 0;
-}
-
-.header h4, .header h3{
-    display:inline-block;
-}
-
-#breadcrumb {
-    padding-left: 0;
-}
-
-.breadcrumb {
-    margin-bottom: 0;
-}
-
-.no-margin-top {
-    margin-top: 0px;
-}
-
-#breadcrumb a{
-    font-size: 20px;
-    color: #630460;
-}
-
-#breadcrumb  li:nth-child(2)  a{
-    font-size:18px;
-    color: #974694;
-}
-
-.active.li > a, .active.li > a:hover{
-    color: #fff;
-    background:url(images/nav_highlight.png) repeat-x;
 }
 
 .list{
