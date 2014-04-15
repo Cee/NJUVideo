@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>微电影</title>
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="video_play.css">     
+        <link rel="stylesheet" href="functional.css">
+        
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+            <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- nav bar -->
+        <div id="navBar" class="nav navbar-inverse" role="navigation">
+            <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-header-collapse" wt-tracker="Header|Collapse|Toggle Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/"><img class="nav-logo" src="images/logo%20small.png"></a>
+                </div>
+                <ul class="nav navbar-nav collapse navbar-collapse navbar-header-collapse">
+                    <li><a href="#">毕业季</a></li>
+                    <li class="active li"><a href="#">微电影</a></li>
+                    <li><a href="#">微课程</a></li>
+                    <li><a href="#">NJU视角</a></li>
+                </ul>
+                <div class="nav-search col-md-3 pull-right visible-md visible-lg">
+                    <form action="" method="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="search" placeholder="search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div><!-- navbar end -->
+        <div class="container">
+        <!-- BreadCrumb -->
+            <div class="row">
+                <div id="breadcrumb" class="col-md-12 main-content">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="video.html">微电影</a></li>
+                    <li class="active">我是一个视频</li>
+                </ol>
+                </div>
+            </div><!-- breadcrumb end -->
+            <div class="row vedio-contant">
+                <div class="col-md-9 video-panel">
+                    <div data-swf="js/flowplayer.swf" class="flowplayer play-button" data-ratio="0.416" data-embed="false">
+                        <video>
+                            <source type="video/mp4" src="http://lilystudio.org/2014Spring/sources/video.mp4"/>
+                        </video>
+                    </div>
+                    <div class="video_header row">
+                        <h2 class="col-md-4">我是一个视频</h2>
+                        <p class="col-md-4 pull-right">播放数：60986</p>
+                    </div>
+                    <div class="video_info">
+                        <h3>视频信息</h3>
+                        <div class="info_seperator"></div>
+                        <p>发布时间：2014年4月3日</p>
+                        <p>作者：南京大学团委</p>
+                        <p>所属标签：微电影、青春</p>
+                        <p>简介：我是一个视频，讲述了一个视频从无到有，从有到精的艰难历程。</p>
+                    </div>
+                </div><!-- video player end -->
+                <div class="col-md-3 video-list-left">
+                    <h4>相关视频</h4>
+                    <div class="video-list-left video-item" id="videoItem1">
+                        <img src="images/small3.jpg" alt="videoItem1">
+                        <h5>南大首部冒险类微电影</h5>
+                        <p>所属：微电影</p>
+                        <p class="num-play"><span class="glyphicon glyphicon-expand"></span>1020</p>
+                    </div>
+                    <div class="video-list-left video-item" id="videoItem2">
+                        <img src="images/small3.jpg" alt="videoItem1">
+                        <h5>南大首部冒险类微电影</h5>
+                        <p>所属：微电影</p>
+                        <p class="num-play"><span class="glyphicon glyphicon-expand"></span>1020</p>
+                    </div>
+                    <div class="video-list-left video-item" id="videoItem3">
+                        <img src="images/small3.jpg" alt="videoItem1">
+                        <h5>南大首部冒险类微电影</h5>
+                        <p>所属：微电影</p>
+                        <p class="num-play"><span class="glyphicon glyphicon-expand"></span>1020</p>
+                    </div>
+                </div><!-- video list end -->
+            </div>
+        </div><!-- main container end-->
+        <!-- footer -->
+        <div id="footer">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-3"><img id="footer-logo" src="images/logo%20footer.PNG"></div>
+                <div class="col-md-7 footer-info">
+                    <p>Copyright&copy; 2014. All right reserved</p>
+                    <p>南京市栖霞区仙林大道163号。电话：025-89680321 89680322</p>
+                    <p>Technical support: Lilystudio</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- js -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/flowplayer.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
