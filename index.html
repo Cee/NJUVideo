@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="index.css">
         
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript"></script>
+        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -19,7 +22,7 @@
     <body>
         <!-- top slider bar-->
         <div class="banner">
-            <div class="banner-logo"><img class="banner-logo" src="images/logo.png"></div>
+            <img class="banner-logo" src="images/logo.png">
             <div id="carousel-banner" class="carousel slide" data-ride="carousel">
                 <!-- indicator -->
                 <ol class="carousel-indicators">
@@ -195,7 +198,9 @@
         <!-- NJU视角 -->
         <div class="row">
         <div id="NJUVideoSight" class="col-md-12 main-content">
-            <h3><a class="pageTitle" href="#">NJU视角</a></h3>
+            <h3><a class="pageTitle" href="#">NJU视角</a>
+                <span class="subtitle"><a href="#">新闻</a>&#8226;<a href="#">趣事</a>&#8226;<a href="#">活动</a></span>
+            </h3>
             <div class="underline"></div>
             <div class="row">
                 <div class="col-md-6">
@@ -239,5 +244,16 @@
         <!-- js -->
         <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/stickUp.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+              //initiating jQuery
+              jQuery(function($) {
+                $(document).ready( function() {
+                  //enabling stickUp on the '.navbar-wrapper' class
+                  $('#navBar').stickUp();
+                });
+              });
+
+            </script>
     </body>
 </html>
