@@ -1,0 +1,20 @@
+.header h4, .header h3{
+    display:inline-block;
+}
+
+#breadcrumb {
+    padding-left: 0;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+}
+
+.no-margin-top {
+    margin-top: 0px;
+}
+
+#breadcrumb a{
+    font-size: 20px;
+    color: #630460;
+}

@@ -1,0 +1,14 @@
+#sort {
+    background: #fefefe;
+    margin:2%;
+    padding:1% 0px;
+    margin-bottom: 3%;
+/*    border-radius: 10px;*/
+    -moz-box-shadow:0px 2px 15px #666;
+    -webkit-box-shadow:0px 2px 15px #666;
+    box-shadow:0px 2px 15px #666;
+}
+
+.row+.underline{
+    margin:5px 0;
+}
