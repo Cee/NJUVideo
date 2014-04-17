@@ -1,0 +1,22 @@
+#sort {
+    padding:0% 30px;
+}
+
+.row+.underline{
+    margin:5px 0;
+}
+
+.list{
+    list-style-position: inside;
+}
+
+.list li{
+    list-style: none;
+    padding-bottom: 30px;
+}
+
+.videoList, #sort{
+    padding-top: 30px;
+    background-color: #fdfdfd;
+    background-clip: padding-box;
+}

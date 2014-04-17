@@ -1,0 +1,58 @@
+
+#player {
+    display: block;
+    width: 100%;
+}
+/* flowplayer custom ui */
+.flowplayer { width: 100%; background-color: #222; background-size: cover;}
+.flowplayer .fp-controls { background-color: rgba(17, 17, 17, 1)}
+.flowplayer .fp-timeline { background-color: rgba(51, 51, 51, 1)}
+.flowplayer .fp-progress { background-color: rgba(0, 167, 200, 1)}
+.flowplayer .fp-buffer { background-color: rgba(122, 122, 122, 1)}
+.flowplayer {
+    height: 500px;
+}
+.video_header p{
+    padding-top: 33px;
+    text-align: right;
+    color: #929292;
+}
+.video_info p{
+    margin-bottom: 5px;
+}
+.info_seperator {
+    background-color: #CCCCCC;
+    height: 2px;
+    margin-bottom: 5px;
+}
+.video-panel {
+    background-color: #fdfdfd;
+    background-clip: padding-box;
+}
+.video-list-left h4{
+    margin-top: 0px;
+}
+.video-list-left img{
+    width:100%;
+}
+.video-item h5{
+    margin: 0px;
+    padding-top: 5px;
+}
+.video-item p{
+    margin: 2px 0px;
+}
+.num-play{
+    position: relative;
+    top: -21px;
+    text-align: right
+}
+
+.video-list-left {
+    background-color: #fdfdfd;
+}
+
+.vedio-contant {
+    background-color: #fdfdfd;
+    padding-top: 20px;
+}
