@@ -7,14 +7,14 @@ if(!preg_match("/^[0-9]+$/", $id)) {
     die();
 }
 
-$conn = mysql_connect("localhost", "lldev", "lilystudio");
+$conn = mysql_connect("localhost", "njuvideo", "videoPWD");
 if (!$conn)
 {
     die('Could not connect: ' . mysql_error());
 }
 mysql_query("set character set 'utf8'");
 mysql_query("set names 'utf8'");
-mysql_select_db("54", $conn);
+mysql_select_db("njuvideo", $conn);
 
 $query = mysql_query("SELECT * FROM category WHERE id=$id");
 if(!$query) {
@@ -71,6 +71,7 @@ function topnew($id) {
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title><?php echo $cat_name; ?></title>

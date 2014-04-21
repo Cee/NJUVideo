@@ -1,12 +1,12 @@
 <?php
-$conn = mysql_connect("localhost", "lldev", "lilystudio");
+$conn = mysql_connect("localhost", "njuvideo", "videoPWD");
 if (!$conn)
 {
     die('Could not connect: ' . mysql_error());
 }
 mysql_query("set character set 'utf8'");
 mysql_query("set names 'utf8'");
-mysql_select_db("54", $conn);
+mysql_select_db("njuvideo", $conn);
 
 $vid = $_GET['id'];
 if($vid=="") {
@@ -49,10 +49,30 @@ if($set) {
     }
 }
 
+function related_video($cid, $vid) {
+    $t = array();
+    $query = mysql_query("SELECT * FROM video WHERE cat_id=$cid AND id!=$vid ORDER BY wcount DESC LIMIT 0, 3");
+    if(!$query) {
+        die(mysql_error());
+    }
+    while($row = mysql_fetch_array($query)) {
+        $a = array(
+                "id" => $row['id'],
+                "title" => $row['title'],
+                "tn" => "thumbnail/".$row['thumbnail_file'],
+                "date" => $row['publish_time'],
+                "wcount" => $row['wcount'],
+                "url" => "/video_play.php?id=".$row['id']
+            );
+        $t[] = $a;
+    }
+    return $t;
+}
 ?><!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title><?php echo $video_title; ?> - 我视</title>
@@ -116,11 +136,16 @@ if($set) {
             </div><!-- breadcrumb end -->
             <div class="row vedio-contant">
                 <div class="col-md-9 video-panel">
+                    <div id="player-panel">
+                    <a href="<?php echo $video_url; ?>" id="player"></a>
+                    </div>
+                    <!-- HTML player
                     <div data-swf="js/flowplayer.swf" class="flowplayer play-button" data-ratio="0.416" data-embed="false">
                         <video>
                             <source src="<?php echo $video_url; ?>"/>
                         </video>
                     </div>
+                    -->
                     <div class="video_header row">
                         <h2 class="col-md-4"><?php echo $video_title; ?></h2>
                         <p class="col-md-4 pull-right">播放数：<?php echo $video_wcount; ?></p>
@@ -136,24 +161,19 @@ if($set) {
                 </div><!-- video player end -->
                 <div class="col-md-3 video-list-left">
                     <h4>相关视频</h4>
-                    <div class="video-list-left video-item" id="videoItem1">
-                        <img src="images/small3.jpg" alt="videoItem1">
-                        <h5>南大首部冒险类微电影</h5>
-                        <p>所属：微电影</p>
-                        <p class="num-play"><span class="glyphicon glyphicon-expand"></span>1020</p>
-                    </div>
-                    <div class="video-list-left video-item" id="videoItem2">
-                        <img src="images/small3.jpg" alt="videoItem1">
-                        <h5>南大首部冒险类微电影</h5>
-                        <p>所属：微电影</p>
-                        <p class="num-play"><span class="glyphicon glyphicon-expand"></span>1020</p>
-                    </div>
-                    <div class="video-list-left video-item" id="videoItem3">
-                        <img src="images/small3.jpg" alt="videoItem1">
-                        <h5>南大首部冒险类微电影</h5>
-                        <p>所属：微电影</p>
-                        <p class="num-play"><span class="glyphicon glyphicon-expand"></span>1020</p>
-                    </div>
+                    <?php
+                        $r = related_video($cat_id, $vid);
+                        for($i=0; $i<3; $i++) {
+                    ?>
+                        <div class="video-list-left video-item" id="videoItem<?php echo $i+1; ?>">
+                            <img src="<?php echo $r[$i]['tn']; ?>" alt="videoItem<?php echo $i+1; ?>">
+                            <h5><?php echo $r[$i]['title']; ?></h5>
+                            <p>所属：<?php echo $cat_name; ?></p>
+                            <p class="num-play"><span class="glyphicon glyphicon-expand"></span><?php echo $r[$i]['wcount']; ?></p>
+                        </div>
+                    <?php
+                        }
+                    ?>
                 </div><!-- video list end -->
             </div>
         </div><!-- main container end-->
@@ -174,6 +194,7 @@ if($set) {
         <script src="js/jquery.min.js"></script>
         <script src="js/flowplayer.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/flowplayer-3.2.13.min.js"></script>
         <script src="js/stickUp.min.js" type="text/javascript"></script>
         <script type="text/javascript">
               //initiating jQuery
@@ -181,6 +202,13 @@ if($set) {
                 $(document).ready( function() {
                   //enabling stickUp on the '.navbar-wrapper' class
                   $('#navBar').stickUp();
+                    
+                //start flash player
+                    flowplayer("player", "js/flowplayer-3.2.18.swf", {
+                        clip: {
+                            autoBuffering: true
+                        }
+                    });
                 });
               });
         </script>

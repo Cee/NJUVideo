@@ -14,14 +14,14 @@ if($title=="" || $description=="")
 	die("sorry");
 }
 
-$conn = mysql_connect("localhost", "lldev", "lilystudio");
+$conn = mysql_connect("localhost", "njuvideo", "videoPWD");
 if (!$conn)
 {
 	die('Could not connect: ' . mysql_error());
 }
 mysql_query("set character set 'utf8'");
 mysql_query("set names 'utf8'");
-mysql_select_db("54", $conn);
+mysql_select_db("njuvideo", $conn);
 
 $query = mysql_query("SHOW TABLE STATUS WHERE name='video'"); 
 $row = mysql_fetch_array($query);
@@ -47,5 +47,9 @@ $dir = "../video/";
 rename($dir.$vfile, $dir.$vf);
 $dir = "../thumbnail/";
 move_uploaded_file($_FILES['thumbnail']['tmp_name'], $dir.$tf);
+
+if(preg_match("/mp4/i", get_extension($vfile))) {
+	system("qtfaststart/bin/qtfaststart -d ".$dir.$tf);
+}
 
 die("ok");

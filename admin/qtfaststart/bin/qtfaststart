@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+"""
+    Command line script for convenience. If this is in your path, you should
+    be able to run it directly like this::
+
+        qtfaststart
+"""
+
+import sys
+import os
+
+# Add parent directory to sys.path so that running from dev environment works
+sys.path.append(os.path.dirname(os.path.dirname((os.path.abspath(__file__)))))
+
+from qtfaststart import command
+command.run()
