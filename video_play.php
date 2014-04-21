@@ -105,7 +105,7 @@ function related_video($cid, $vid) {
                     <a href="/"><img class="nav-logo" src="images/logo%20small.png"></a>
                 </div>
                 <ul class="nav navbar-nav collapse navbar-collapse navbar-header-collapse">
-                    <li<?php if($id==5){?> class="active li"<?php } ?>><a href="video.php?id=5">毕业季</a></li>
+                    <!-- <li<?php if($id==5){?> class="active li"<?php } ?>><a href="video.php?id=5">毕业季</a></li> -->
                     <li<?php if($id==2){?> class="active li"<?php } ?>><a href="video.php?id=2">微电影</a></li>
                     <li<?php if($id==3){?> class="active li"<?php } ?>><a href="video.php?id=3">微课程</a></li>
                     <li<?php if($id==4){?> class="active li"<?php } ?>><a href="video.php?id=4">NJU视角</a></li>
@@ -166,7 +166,7 @@ function related_video($cid, $vid) {
                         for($i=0; $i<3; $i++) {
                     ?>
                         <div class="video-list-left video-item" id="videoItem<?php echo $i+1; ?>">
-                            <img src="<?php echo $r[$i]['tn']; ?>" alt="videoItem<?php echo $i+1; ?>">
+                            <a href="<?php echo $r[$i]['url']; ?>"><img src="<?php echo $r[$i]['tn']; ?>" alt="videoItem<?php echo $i+1; ?>"></a>
                             <h5><?php echo $r[$i]['title']; ?></h5>
                             <p>所属：<?php echo $cat_name; ?></p>
                             <p class="num-play"><span class="glyphicon glyphicon-expand"></span><?php echo $r[$i]['wcount']; ?></p>
@@ -205,8 +205,10 @@ function related_video($cid, $vid) {
                     
                 //start flash player
                     flowplayer("player", "js/flowplayer-3.2.18.swf", {
+                        key: "#@8b87c98185dcf0c4431",
                         clip: {
-                            autoBuffering: true
+                            // enable hardware acceleration
+                            accelerated: true
                         }
                     });
                 });
