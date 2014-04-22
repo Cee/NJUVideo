@@ -1,7 +1,11 @@
 
 #player {
     display: block;
-    width: 100%;
+    width: 698px;
+    height: 404px;
+}
+object {
+    align-self: center;
 }
 /* flowplayer custom ui */
 .flowplayer { width: 100%; background-color: #222; background-size: cover;}
@@ -55,4 +59,25 @@
 .vedio-contant {
     background-color: #fdfdfd;
     padding-top: 20px;
+}
+
+#player-panel {
+    display: block;
+    width: 100%;
+    background: #333;
+}
+
+@media screen and (min-width:1200px){
+#player {
+    height: 524px;
+    display: block;
+    width: 860px;
+}    
+}
+
+@media screen and (max-width:991px){
+    #player{
+        width: 720px;
+        height: 416px;
+    }
 }

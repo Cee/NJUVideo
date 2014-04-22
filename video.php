@@ -7,14 +7,14 @@ if(!preg_match("/^[0-9]+$/", $id)) {
     die();
 }
 
-$conn = mysql_connect("localhost", "lldev", "lilystudio");
+$conn = mysql_connect("localhost", "njuvideo", "videoPWD");
 if (!$conn)
 {
     die('Could not connect: ' . mysql_error());
 }
 mysql_query("set character set 'utf8'");
 mysql_query("set names 'utf8'");
-mysql_select_db("54", $conn);
+mysql_select_db("njuvideo", $conn);
 
 $query = mysql_query("SELECT * FROM category WHERE id=$id");
 if(!$query) {
@@ -71,6 +71,7 @@ function topnew($id) {
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title><?php echo $cat_name; ?></title>
@@ -102,7 +103,7 @@ function topnew($id) {
                     <a href="/"><img class="nav-logo" src="images/logo%20small.png"></a>
                 </div>
                 <ul class="nav navbar-nav collapse navbar-collapse navbar-header-collapse">
-                    <li<?php if($id==5){?> class="active li"<?php } ?>><a href="video.php?id=5">毕业季</a></li>
+                    <!-- <li<?php if($id==5){?> class="active li"<?php } ?>><a href="video.php?id=5">毕业季</a></li> -->
                     <li<?php if($id==2){?> class="active li"<?php } ?>><a href="video.php?id=2">微电影</a></li>
                     <li<?php if($id==3){?> class="active li"<?php } ?>><a href="video.php?id=3">微课程</a></li>
                     <li<?php if($id==4){?> class="active li"<?php } ?>><a href="video.php?id=4">NJU视角</a></li>
@@ -201,8 +202,13 @@ function topnew($id) {
         <div id="footer">
             <div class="container">
             <div class="row">
-                <div class="col-md-3"><img id="footer-logo" src="images/logo%20footer.PNG"></div>
-                <div class="col-md-7 footer-info">
+                <div class="col-md-4 hidden-xs hidden-sm"><img id="footer-logo img-responsive" src="images/logo%20footer.PNG"></div>
+                <div class="col-md-7 footer-info visible-md visible-lg">
+                    <p>Copyright&copy; 2014. All right reserved</p>
+                    <p>南京市栖霞区仙林大道163号。电话：025-89680321 89680322</p>
+                    <p>Technical support: Lilystudio</p>
+                </div>
+                <div class="col-md-7 footer-info-mobile hidden-md hidden-lg">
                     <p>Copyright&copy; 2014. All right reserved</p>
                     <p>南京市栖霞区仙林大道163号。电话：025-89680321 89680322</p>
                     <p>Technical support: Lilystudio</p>
