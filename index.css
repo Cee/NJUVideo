@@ -22,10 +22,10 @@ body {
 
 .banner-shadow {
     background: url("images/banner%20shadow.PNG") repeat-x;
-    height: 25px;
+    height: 5px;
     width: 100%;
     position: absolute;
-    top: 335px;
+    top: 355px;
     z-index: 1;
     margin: 0px 0px 0px 0px;
 }
@@ -95,7 +95,7 @@ body {
 
 .videoList li{
     list-style: none;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 .underline {
@@ -141,9 +141,7 @@ h3 {
     margin-bottom: 50px;
 }
 
-.footer-info{
-    padding-left: 50px;
-}
+
 
 .main-content {
 /*    margin-bottom: 30px;*/
@@ -237,3 +235,13 @@ h3 {
     font-size:18px;
     color: #974694;
 }
+#footer-logo {
+    width: 100%;
+    height: auto;
+}
+
+.footer-info-mobile {
+    text-align: center;
+}
+
+

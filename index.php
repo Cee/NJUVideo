@@ -61,7 +61,7 @@ function top($cid, $c) {
     </head>
     <body>
         <!-- top slider bar-->
-        <div class="banner">
+        <div class="banner visible-md visible-lg">
             <img class="banner-logo" src="images/logo.png">
             <div id="carousel-banner" class="carousel slide" data-ride="carousel">
                 <!-- indicator -->
@@ -101,7 +101,7 @@ function top($cid, $c) {
 <!--            <img class="banner-logo" src="images/logo.png">-->
         </div>
         <!-- shadow -->
-	    <div class="banner-shadow"></div>
+	    <div class="banner-shadow visible-md visible-lg"></div>
         <!-- nav bar -->
         <div id="navBar" class="nav navbar-inverse" role="navigation">
             <div class="container">
@@ -141,7 +141,7 @@ function top($cid, $c) {
         ?>
         <div class="row">
         <div id="graduate" class="col-md-9 main-content">
-            <h3><a class="pageTitle" href="video.php?id=5">微电影</a></h3>
+            <h3><a class="pageTitle" href="video.php?id=2">微电影</a></h3>
             <div class="underline"></div>
             <div class="row">
                 <div class="col-md-8">
@@ -160,7 +160,7 @@ function top($cid, $c) {
             </div>
         </div>
         <!-- 排行榜 -->
-        <div id="rankingList" class="col-md-3 main-content">
+        <div id="rankingList" class="col-md-3 main-content visible-md visible-lg">
             <h3><a class="pageTitle" href="#">排行榜</a></h3>
             <div class="underline"></div>
             <div>
@@ -278,8 +278,13 @@ function top($cid, $c) {
         <div id="footer">
             <div class="container">
             <div class="row">
-                <div class="col-md-3"><img id="footer-logo" src="images/logo%20footer.PNG"></div>
-                <div class="col-md-7 footer-info">
+                <div class="col-md-4 hidden-xs hidden-sm"><img id="footer-logo img-responsive" src="images/logo%20footer.PNG"></div>
+                <div class="col-md-7 footer-info visible-md visible-lg">
+                    <p>Copyright&copy; 2014. All right reserved</p>
+                    <p>南京市栖霞区仙林大道163号。电话：025-89680321 89680322</p>
+                    <p>Technical support: Lilystudio</p>
+                </div>
+                <div class="col-md-7 footer-info-mobile hidden-md hidden-lg">
                     <p>Copyright&copy; 2014. All right reserved</p>
                     <p>南京市栖霞区仙林大道163号。电话：025-89680321 89680322</p>
                     <p>Technical support: Lilystudio</p>

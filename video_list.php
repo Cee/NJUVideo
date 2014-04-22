@@ -33,7 +33,7 @@ function top($id, $type) {
     if($type=="h") {
         $by = "wcount";
     }
-    $query = mysql_query("SELECT * FROM video WHERE cat_id=$id ORDER BY $by DESC LIMIT 0, 5");
+    $query = mysql_query("SELECT * FROM video WHERE cat_id=$id ORDER BY $by DESC LIMIT 0, 16");
     if(!$query) {
         die(mysql_error());
     }
@@ -89,7 +89,7 @@ $t = top($id, $type);
                     <a href="/"><img class="nav-logo" src="images/logo%20small.png"></a>
                 </div>
                 <ul class="nav navbar-nav collapse navbar-collapse navbar-header-collapse">
-                    <li<?php if($id==5){?> class="active li"<?php } ?>><a href="video.php?id=5">毕业季</a></li>
+                    <!-- <li<?php if($id==5){?> class="active li"<?php } ?>><a href="video.php?id=5">毕业季</a></li> -->
                     <li<?php if($id==2){?> class="active li"<?php } ?>><a href="video.php?id=2">微电影</a></li>
                     <li<?php if($id==3){?> class="active li"<?php } ?>><a href="video.php?id=3">微课程</a></li>
                     <li<?php if($id==4){?> class="active li"<?php } ?>><a href="video.php?id=4">NJU视角</a></li>
@@ -121,7 +121,7 @@ $t = top($id, $type);
         <!-- 微电影 分类列表-->
         <div class="row">
         <div id="microMovie" class="col-md-12 main-content">
-            <div class="row" id="sort">
+            <!--<div class="row" id="sort">
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12">
@@ -145,7 +145,7 @@ $t = top($id, $type);
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             
             <div class="row">
                 <div class="videoList col-md-12">
@@ -153,7 +153,7 @@ $t = top($id, $type);
                         <div class="row">
                         <div class="col-md-3">
                             <?php
-                                for($i=0; $i<16; $i+=4) {
+                                for($i=0; $i<count($t)+1; $i+=4) {
                                     ?>
                                         <li><a href="<?php echo $t[$i]["url"]; ?>"><img class="small image" src="<?php echo $t[$i]["tn"]; ?>"></a><h5><?php echo $t[$i]["title"]; ?></h5></li>
                                     <?php
@@ -162,7 +162,7 @@ $t = top($id, $type);
                         </div>
                         <div class="col-md-3">
                             <?php
-                                for($i=1; $i<16; $i+=4) {
+                                for($i=1; $i<count($t)+1; $i+=4) {
                                     ?>
                                         <li><a href="<?php echo $t[$i]["url"]; ?>"><img class="small image" src="<?php echo $t[$i]["tn"]; ?>"></a><h5><?php echo $t[$i]["title"]; ?></h5></li>
                                     <?php
@@ -171,7 +171,7 @@ $t = top($id, $type);
                         </div>
                         <div class="col-md-3">
                             <?php
-                                for($i=2; $i<16; $i+=4) {
+                                for($i=2; $i<count($t)+1; $i+=4) {
                                     ?>
                                         <li><a href="<?php echo $t[$i]["url"]; ?>"><img class="small image" src="<?php echo $t[$i]["tn"]; ?>"></a><h5><?php echo $t[$i]["title"]; ?></h5></li>
                                     <?php
@@ -180,7 +180,7 @@ $t = top($id, $type);
                         </div>
                         <div class="col-md-3">
                             <?php
-                                for($i=3; $i<16; $i+=4) {
+                                for($i=3; $i<count($t)+1; $i+=4) {
                                     ?>
                                         <li><a href="<?php echo $t[$i]["url"]; ?>"><img class="small image" src="<?php echo $t[$i]["tn"]; ?>"></a><h5><?php echo $t[$i]["title"]; ?></h5></li>
                                     <?php
@@ -198,8 +198,13 @@ $t = top($id, $type);
         <div id="footer">
             <div class="container">
             <div class="row">
-                <div class="col-md-3"><img id="footer-logo" src="images/logo%20footer.PNG"></div>
-                <div class="col-md-7 footer-info">
+                <div class="col-md-4 hidden-xs hidden-sm"><img id="footer-logo img-responsive" src="images/logo%20footer.PNG"></div>
+                <div class="col-md-7 footer-info visible-md visible-lg">
+                    <p>Copyright&copy; 2014. All right reserved</p>
+                    <p>南京市栖霞区仙林大道163号。电话：025-89680321 89680322</p>
+                    <p>Technical support: Lilystudio</p>
+                </div>
+                <div class="col-md-7 footer-info-mobile hidden-md hidden-lg">
                     <p>Copyright&copy; 2014. All right reserved</p>
                     <p>南京市栖霞区仙林大道163号。电话：025-89680321 89680322</p>
                     <p>Technical support: Lilystudio</p>

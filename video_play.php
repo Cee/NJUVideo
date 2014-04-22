@@ -159,7 +159,7 @@ function related_video($cid, $vid) {
                         <p>简介：<?php echo $video_description; ?></p>
                     </div>
                 </div><!-- video player end -->
-                <div class="col-md-3 video-list-left">
+                <div class="col-md-3 video-list-left visible-md visible-lg">
                     <h4>相关视频</h4>
                     <?php
                         $r = related_video($cat_id, $vid);
@@ -191,10 +191,10 @@ function related_video($cid, $vid) {
             </div>
         </div>
         <!-- js -->
-        <script src="js/jquery.min.js"></script>
         <script src="js/flowplayer.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/flowplayer-3.2.13.min.js"></script>
+        <script src="js/flowplayer.ipad-3.2.13.min.js"></script>
         <script src="js/stickUp.min.js" type="text/javascript"></script>
         <script type="text/javascript">
               //initiating jQuery
@@ -208,9 +208,10 @@ function related_video($cid, $vid) {
                         key: "#@8b87c98185dcf0c4431",
                         clip: {
                             // enable hardware acceleration
-                            accelerated: true
+                            accelerated: true,
+                            scaling: 'fit'
                         }
-                    });
+                    }).ipad();
                 });
               });
         </script>
