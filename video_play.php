@@ -147,7 +147,7 @@ function related_video($cid, $vid) {
                     </div>
                     -->
                     <div class="video_header row">
-                        <h2 class="col-md-4"><?php echo $video_title; ?></h2>
+                        <h2 class="col-md-8"><?php echo $video_title; ?></h2>
                         <p class="col-md-4 pull-right">播放数：<?php echo $video_wcount; ?></p>
                     </div>
                     <div class="video_info">
