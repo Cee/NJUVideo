@@ -33,7 +33,7 @@ function top($id, $type) {
     if($type=="h") {
         $by = "wcount";
     }
-    $query = mysql_query("SELECT * FROM video WHERE cat_id=$id ORDER BY $by DESC LIMIT 0, 16");
+    $query = mysql_query("SELECT * FROM video WHERE cat_id=$id ORDER BY $by DESC");
     if(!$query) {
         die(mysql_error());
     }
