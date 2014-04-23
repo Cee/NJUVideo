@@ -48,8 +48,9 @@ rename($dir.$vfile, $dir.$vf);
 $dir = "../thumbnail/";
 move_uploaded_file($_FILES['thumbnail']['tmp_name'], $dir.$tf);
 
+$dir = "../video/";
 if(preg_match("/mp4/i", get_extension($vfile))) {
-	system("qtfaststart/bin/qtfaststart -d ".$dir.$tf);
+	system("qtfaststart/bin/qtfaststart -d ".$dir.$vf);
 }
 
 die("ok");

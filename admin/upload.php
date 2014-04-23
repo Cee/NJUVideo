@@ -69,7 +69,7 @@ $(function() {
 		// General settings
 		runtimes : 'flash',
 		url : './uploadf.php',
-		chunk_size : '4mb',
+		chunk_size : '12mb',
 		unique_names : true,
 		multi_selection : false,
 		
